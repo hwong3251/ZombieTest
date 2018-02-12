@@ -179,8 +179,21 @@ public class ZombieRunner extends Application {
     	        	rect.getTransforms().add(new Rotate(anglemove,250,250));
     	        	}
     	        });
+    	        game.setOnMouseDragged(dragged ->
+    	        {
+    	        	if(dragged.getX()<=500)
+    	        	{
+    	        	Point2D mousepoint= new Point2D(dragged.getX(), dragged.getY());
+    	        	double anglemove=computeAngle(mousepoint);
+
+    	        	previousangle=anglemove;
+    	        	rect.getTransforms().clear();
+    	        	rect.getTransforms().add(new Rotate(anglemove,250,250));
+    	        	}
+    	        });
     		}
     	});
+    	
     	// ****************SCENE SAVE*****************************
     	
     	// ****************SCENE LOAD*****************************
