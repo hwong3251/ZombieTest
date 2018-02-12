@@ -1,0 +1,7 @@
+1.Fix minor errors(Hoilam)
+2.bullet animation(Leon/Yiren/Derek)
+3.zombie spawer(Derek/Yiren)
+4.shop(Hoilam)
+5.Weapon class(Leon)
+6.gold gaining(everyone)
+7.Csv(final part of project/Yiren)
