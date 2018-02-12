@@ -252,10 +252,9 @@ public class ZombieRunner extends Application {
         
         Button btnmenu = new Button("MENU");
         btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-        btnmenu.setAlignment(Pos.TOP_RIGHT);
         btnmenu.setTranslateY(-190);
-        btnmenu.setTranslateX(-100);	
-        btnmenu.setMinWidth(90);	
+        btnmenu.setTranslateX(-300);	
+        btnmenu.setMinWidth(50);	
         btnmenu.setFont(Font.loadFont("file:WarWound.otf",30));
         btnmenu.setStyle("-fx-padding:5;");
         
@@ -341,14 +340,17 @@ public class ZombieRunner extends Application {
     	timeline.getKeyFrames().add(cx);
     	timeline.getKeyFrames().add(da);
     	timeline.getKeyFrames().add(bb);
-    	timeline.play();
+    	
         primaryStage.setScene(SceneMenu);
         primaryStage.show();
         AnimationTimer timer = new AnimationTimer() 
         {
             public void handle(long now) 
             {
-               
+            	game.setOnMouseClicked( clicked ->
+        		{
+        			timeline.play();
+        		});
             }
         };
         timer.start();
