@@ -1,8 +1,9 @@
 .button{
     -fx-border-color: transparent;
     -fx-border-width: 0;
-    -fx-background-radius: 0;
-    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+    -fx-background-color:#d1c3b3;
+    -fx-padding:2;
 }
 
 .button:focused {
@@ -15,5 +16,5 @@
 }
 
 .button:pressed {
-    -fx-background-color: transparent;
+    -fx-background-color: #eddbc7;
 }

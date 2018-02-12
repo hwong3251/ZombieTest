@@ -18,6 +18,7 @@ import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.application.Application;
@@ -87,24 +88,20 @@ public class ZombieRunner extends Application {
     	btnstart.setOnAction(e->primaryStage.setScene(SceneGame));
     	btnstart.setTranslateY(0);
     	btnstart.setFont(Font.loadFont("file:WarWound.otf",40));
-    	btnstart.setStyle("-fx-padding:5;");
     	
     	Button btnsave = new Button("SAVE");
     	//btnsave.setOnAction(e->primaryStage.setScene(SceneSave));
     	btnsave.setFont(Font.loadFont("file:WarWound.otf",40));
     	btnsave.setTranslateY(60);
-    	btnsave.setStyle("-fx-padding:5;");
     	
     	Button btnload = new Button("LOAD");
     	//btnload.setOnAction(e->primaryStage.setScene(SceneLoad));
     	btnload.setFont(Font.loadFont("file:WarWound.otf",40));
-    	btnload.setStyle("-fx-padding:5;");
     	btnload.setTranslateY(120);
 
     	Button btnshop = new Button("SHOP");
     	btnshop.setOnAction(e->primaryStage.setScene(SceneShop));
     	btnshop.setFont(Font.loadFont("file:WarWound.otf",40));
-    	btnshop.setStyle("-fx-padding:5;");
     	btnshop.setTranslateY(180);
     	
     	   
@@ -186,6 +183,7 @@ public class ZombieRunner extends Application {
     	// ****************SCENE LOAD*****************************
     	
     	//****************SCENE_SHOP*****************************
+    	StackPane sshop = new StackPane();
 	    Image auto = new Image("Auto.png");
 			ImageView iAuto = new ImageView();
 			iAuto.setImage(auto);
@@ -238,22 +236,17 @@ public class ZombieRunner extends Application {
     
         
         Button btnmenu = new Button("MENU");
-        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-        btnmenu.setAlignment(Pos.TOP_RIGHT);
-        btnmenu.setTranslateY(-190);
-        btnmenu.setTranslateX(-100);	
-        btnmenu.setMinWidth(90);	
-        btnmenu.setFont(Font.loadFont("file:WarWound.otf",30));
-        btnmenu.setStyle("-fx-padding:5;");
+	        btnmenu.setTranslateX(150);
+	        btnmenu.setTranslateY(200);
+	        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
         
         Label title = new Label("Weapons Shop");
-        	title.setTranslateY(-220);
-        	title.setTranslateX(250);
-        	title.setMinWidth(300);
+        	title.setTranslateY(-200);
         	title.setFont(Font.loadFont("file:WarWound.otf",30));
-        Label gold = new Label("Gold" + player.getGold());
-        	title.setMinWidth(300);
-        	title.setFont(Font.loadFont("file:WarWound.otf",30));
+        Label gold = new Label("Gold: " + player.getGold());
+        	gold.setTranslateY(-100);
+        	gold.setTranslateX(150);
+        	gold.setFont(Font.loadFont("file:WarWound.otf",30));
         
         Button btnAuto = new Button();
         	btnAuto.setGraphic(iAuto);
@@ -268,6 +261,21 @@ public class ZombieRunner extends Application {
         Button btnBest = new Button();
         	btnBest.setGraphic(iBest);
         
+        	
+
+        	
+        Button[]weaponbtn = new Button[6];
+        weaponbtn[0] = btnAuto;
+        weaponbtn[1] = btnClick;
+        weaponbtn[2] = btnBoomerang;
+        weaponbtn[3] = btnPoison;
+        weaponbtn[4] = btnSpear;
+        weaponbtn[5] = btnBest;
+        for(int i = 0; i < 6; i++)
+        {
+        	weaponbtn[i].setAlignment(Pos.CENTER);
+        }
+        
         vbox1.getChildren().addAll(btnAuto, btnClick, btnSpear);
         	vbox1.setMaxSize(35, 300);
         	vbox1.setTranslateX(-80);
@@ -275,9 +283,9 @@ public class ZombieRunner extends Application {
         	vbox2.setMaxSize(35, 300);
         	vbox2.setTranslateX(-80);
         
-        hbox.getChildren().addAll(title,gold,vbox1, vbox2,btnmenu);
-        
-        SceneShop = new Scene(hbox,500,500);
+        hbox.getChildren().addAll(vbox1, vbox2);
+        sshop.getChildren().addAll(title,gold,hbox,btnmenu);
+        SceneShop = new Scene(sshop,500,500);
         SceneShop.getStylesheets().add("SceneShop.css");
     	//****************SCENE SHOP*****************************
     	    
@@ -329,8 +337,8 @@ public class ZombieRunner extends Application {
     	timeline.getKeyFrames().add(da);
     	timeline.getKeyFrames().add(bb);
     	timeline.play();
-        primaryStage.setScene(SceneMenu);
-        primaryStage.show();
+      //  primaryStage.setScene(SceneMenu);
+       // primaryStage.show();
         AnimationTimer timer = new AnimationTimer() 
         {
             public void handle(long now) 
