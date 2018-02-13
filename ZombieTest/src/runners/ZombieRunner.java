@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
@@ -16,6 +18,7 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.beans.property.Property;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.stage.Modality;
@@ -29,6 +32,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
@@ -261,33 +267,30 @@ public class ZombieRunner extends Application {
         	gold.setTranslateX(150);
         	gold.setFont(Font.loadFont("file:WarWound.otf",30));
         
-        Button btnAuto = new Button();
-        	btnAuto.setGraphic(iAuto);
-        Button btnClick = new Button();
-        	btnClick.setGraphic(iClick);
-        Button btnBoomerang = new Button();
-        	btnBoomerang.setGraphic(iBoomerang);
-        Button btnPoison = new Button();
-        	btnPoison.setGraphic(iPoison);
-        Button btnSpear = new Button();
-        	btnSpear.setGraphic(iSpear);
-        Button btnBest = new Button();
-        	btnBest.setGraphic(iBest);
+        MenuButton btnAuto = new MenuButton("",iAuto);      	
+	        MenuItem miA = new MenuItem("Click Here to BUY\nGold: 0\n AUTO\n  Shoots out multiple bullets");
+	        btnAuto.getItems().add(miA);
+        MenuButton btnClick = new MenuButton("",iClick);
+	        MenuItem miC = new MenuItem("Click Here to BUY\nGold: 0\n CLICK\n  des");
+	        btnClick.getItems().add(miC);
+        MenuButton btnBoomerang = new MenuButton("",iBoomerang);
+	        MenuItem miB = new MenuItem("Click Here to BUY\nGold: 0\n BOOMERANG\n  des");
+	        btnBoomerang.getItems().add(miB);
+        MenuButton btnPoison = new MenuButton("",iPoison);
+	        MenuItem miP = new MenuItem("Click Here to BUY\nGold: 0\n POISON\n  des");
+	        btnPoison.getItems().add(miP);
+        MenuButton btnSpear = new MenuButton("",iSpear);
+	        MenuItem miS = new MenuItem("Click Here to BUY\nGold: 0\n SPEAR\n  des");
+	        btnSpear.getItems().add(miS);
+        MenuButton btnBest = new MenuButton("",iBest);
+	        MenuItem miBest = new MenuItem("Click Here to BUY\nGold: 999,999,999,999,999,999,999\n BESTTTTTTT\n  TYLER1 POWER");
+	        btnBest.getItems().add(miBest);
         
+        MenuButton menuButton = new MenuButton("",iAuto);
+         menuButton.getItems().addAll(
+                    Stream.of("Info", "New", "Open", "Save", "Save As", "Print", "Share", "Export", "Close")
+                        .map(MenuItem::new).collect(Collectors.toList()));	
         	
-
-        	
-        Button[]weaponbtn = new Button[6];
-        weaponbtn[0] = btnAuto;
-        weaponbtn[1] = btnClick;
-        weaponbtn[2] = btnBoomerang;
-        weaponbtn[3] = btnPoison;
-        weaponbtn[4] = btnSpear;
-        weaponbtn[5] = btnBest;
-        for(int i = 0; i < 6; i++)
-        {
-        	weaponbtn[i].setAlignment(Pos.CENTER);
-        }
         
         vbox1.getChildren().addAll(btnAuto, btnClick, btnSpear);
         	vbox1.setMaxSize(35, 300);
