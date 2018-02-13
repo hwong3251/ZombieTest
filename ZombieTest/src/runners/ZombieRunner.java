@@ -249,18 +249,9 @@ public class ZombieRunner extends Application {
     
         
         Button btnmenu = new Button("MENU");
-<<<<<<< HEAD
 	        btnmenu.setTranslateX(150);
 	        btnmenu.setTranslateY(200);
 	        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-=======
-        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-        btnmenu.setTranslateY(-190);
-        btnmenu.setTranslateX(-300);	
-        btnmenu.setMinWidth(50);	
-        btnmenu.setFont(Font.loadFont("file:WarWound.otf",30));
-        btnmenu.setStyle("-fx-padding:5;");
->>>>>>> branch 'f' of https://github.com/hwong3251/ZombieTest.git
         
         Label title = new Label("Weapons Shop");
         	title.setTranslateY(-200);
@@ -358,15 +349,12 @@ public class ZombieRunner extends Application {
     	timeline.getKeyFrames().add(cx);
     	timeline.getKeyFrames().add(da);
     	timeline.getKeyFrames().add(bb);
-<<<<<<< HEAD
     	timeline.play();
       //  primaryStage.setScene(SceneMenu);
        // primaryStage.show();
-=======
     	
         primaryStage.setScene(SceneMenu);
         primaryStage.show();
->>>>>>> branch 'f' of https://github.com/hwong3251/ZombieTest.git
         AnimationTimer timer = new AnimationTimer() 
         {
             public void handle(long now) 
