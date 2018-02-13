@@ -55,7 +55,7 @@ public class ZombieRunner extends Application {
 	Scene SceneMenu, SceneShop, SceneGame, SceneSave, SceneLoad;
 	private double previousangle;
 	private boolean playing=false;
-	private static final double W = 800, H = 560;
+	private static final double W = 500, H = 500;
 	
     public static void main(String[] args) throws IOException {
 	    	
@@ -249,18 +249,16 @@ public class ZombieRunner extends Application {
     
         
         Button btnmenu = new Button("MENU");
-<<<<<<< HEAD
 	        btnmenu.setTranslateX(150);
 	        btnmenu.setTranslateY(200);
 	        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-=======
         btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
         btnmenu.setTranslateY(-190);
         btnmenu.setTranslateX(-300);	
         btnmenu.setMinWidth(50);	
         btnmenu.setFont(Font.loadFont("file:WarWound.otf",30));
         btnmenu.setStyle("-fx-padding:5;");
->>>>>>> branch 'f' of https://github.com/hwong3251/ZombieTest.git
+        // branch 'f' of https://github.com/hwong3251/ZombieTest.git
         
         Label title = new Label("Weapons Shop");
         	title.setTranslateY(-200);
@@ -320,8 +318,9 @@ public class ZombieRunner extends Application {
     	Scene scene = new Scene(root, W, H);
     	Circle c = new Circle();
     	c.setCenterX(250.0f); 
-        c.setCenterY(200.0f); 
-        c.setRadius(30.0f); 
+        c.setCenterY(250.0f); 
+        c.setRadius(10.0f);
+        game.getChildren().add(c);
     	double y = 0;
     	double x = randomWithRange(0, 500);
     	double a = 0;
@@ -330,49 +329,51 @@ public class ZombieRunner extends Application {
     	double e = randomWithRange(0, 500);
     	final Rectangle player1 = new Rectangle(400, 300, 50, 50);
     	// zombies
-    	final Rectangle zombie = new Rectangle(x, y, 50, 50);
+    	/*final Rectangle zombie = new Rectangle(x, y, 50, 50);
     	final Rectangle zombie2 = new Rectangle(b, a, 50, 50);
-    	final Rectangle zombie3 = new Rectangle(e, d, 50, 50);
+    	final Rectangle zombie3 = new Rectangle(e, d, 50, 50);*/
     	c.setFill(Color.BLUE);
-    	player1.setFill(Color.BLACK);
-    	zombie.setFill(Color.GREEN);
+    	//player1.setFill(Color.BLACK);
+    	/*zombie.setFill(Color.GREEN);
     	zombie2.setFill(Color.GREEN);
-    	zombie3.setFill(Color.GREEN);
-    	final KeyValue ab = new KeyValue(c.centerYProperty(),-500);
-    	final KeyFrame ac = new KeyFrame(Duration.millis(1000), ab);
-    	final KeyValue cz = new KeyValue(zombie.yProperty(), 500);
+    	zombie3.setFill(Color.GREEN);*/
+    	System.out.println(c.centerYProperty());
+    	
+    	/*final KeyValue cz = new KeyValue(zombie.yProperty(), 500);
     	final KeyFrame cx = new KeyFrame(Duration.millis(1000), cz);
     	final KeyValue dc = new KeyValue(zombie2.yProperty(),400);
     	final KeyFrame da = new KeyFrame(Duration.millis(1000), dc);
     	final KeyValue ba = new KeyValue(zombie3.yProperty(),400);
-    	final KeyFrame bb = new KeyFrame(Duration.millis(1000), ba);
-    	final Timeline timeline = new Timeline();
-    	timeline.setCycleCount(100);
-    	timeline.setAutoReverse(false);
-    	game.getChildren().add(c);
+    	final KeyFrame bb = new KeyFrame(Duration.millis(1000), ba);*/
+    	
     	game.getChildren().add(player1);
-    	game.getChildren().add(zombie);
+    	/*game.getChildren().add(zombie);
     	game.getChildren().add(zombie2);
-    	game.getChildren().add(zombie3);
-    	timeline.getKeyFrames().add(ac);
-    	timeline.getKeyFrames().add(cx);
+    	game.getChildren().add(zombie3);*/
+    	
+    	/*timeline.getKeyFrames().add(cx);
     	timeline.getKeyFrames().add(da);
-    	timeline.getKeyFrames().add(bb);
-<<<<<<< HEAD
-    	timeline.play();
-      //  primaryStage.setScene(SceneMenu);
-       // primaryStage.show();
-=======
+    	timeline.getKeyFrames().add(bb);*/
+    	
+    	//timeline.play();
+    	//primaryStage.setScene(SceneMenu);
+    	//primaryStage.show();
     	
         primaryStage.setScene(SceneMenu);
         primaryStage.show();
->>>>>>> branch 'f' of https://github.com/hwong3251/ZombieTest.git
         AnimationTimer timer = new AnimationTimer() 
         {
             public void handle(long now) 
             {
             	game.setOnMouseClicked( clicked ->
         		{
+        			final KeyValue ab = new KeyValue(c.centerYProperty(),clicked.getY());
+        	    	final KeyValue ax = new KeyValue(c.centerXProperty(),clicked.getX());
+        	    	final KeyFrame ac = new KeyFrame(Duration.millis(100), ab,ax);
+        	    	final Timeline timeline = new Timeline();
+        	    	timeline.setCycleCount(2);
+        	    	timeline.setAutoReverse(true);
+        	    	timeline.getKeyFrames().add(ac);
         			timeline.play();
         		});
             }
