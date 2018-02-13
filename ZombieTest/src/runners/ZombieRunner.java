@@ -285,13 +285,7 @@ public class ZombieRunner extends Application {
         MenuButton btnBest = new MenuButton("",iBest);
 	        MenuItem miBest = new MenuItem("Click Here to BUY\nGold: 999,999,999,999,999,999,999\n BESTTTTTTT\n  TYLER1 POWER");
 	        btnBest.getItems().add(miBest);
-        
-        MenuButton menuButton = new MenuButton("",iAuto);
-         menuButton.getItems().addAll(
-                    Stream.of("Info", "New", "Open", "Save", "Save As", "Print", "Share", "Export", "Close")
-                        .map(MenuItem::new).collect(Collectors.toList()));	
-        	
-        
+     
         vbox1.getChildren().addAll(btnAuto, btnClick, btnSpear);
         	vbox1.setMaxSize(35, 300);
         	vbox1.setTranslateX(-80);
