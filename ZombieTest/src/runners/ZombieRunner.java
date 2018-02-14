@@ -258,12 +258,6 @@ public class ZombieRunner extends Application {
 	    btnmenu.setTranslateX(150);
 	    btnmenu.setTranslateY(200);
 	    btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-        btnmenu.setTranslateY(-190);
-        btnmenu.setTranslateX(-300);	
-        btnmenu.setMinWidth(50);	
-        btnmenu.setFont(Font.loadFont("file:WarWound.otf",30));
-        btnmenu.setStyle("-fx-padding:5;");
 
         Label title = new Label("Weapons Shop");
         	title.setTranslateY(-200);
