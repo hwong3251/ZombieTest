@@ -13,6 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.BufferedImage;
 import Characters.Player;
+import Upgrades.Auto;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -336,7 +337,15 @@ public class ZombieRunner extends Application {
         	gold.setFont(Font.loadFont("file:WarWound.otf",30));
         
         MenuButton btnAuto = new MenuButton("",iAuto);      	
-	        MenuItem miA = new MenuItem("Click Here to BUY\nGold: 0\n AUTO\n  Shoots out multiple bullets");
+	        MenuItem miA = new MenuItem("Click Here to BUY\nGold: 100\n AUTO\n  Shoots out multiple bullets");
+	        miA.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					player.subtractGold(100);
+					gold.setText("Gold: " + player.getGold());
+				}	            
+	        });
 	        btnAuto.getItems().add(miA);
 /*
         MenuButton btnClick = new MenuButton("",iClick);
@@ -354,6 +363,14 @@ public class ZombieRunner extends Application {
 */    
         MenuButton btnBest = new MenuButton("",iBest);
 	        MenuItem miBest = new MenuItem("Click Here to BUY\nGold: 999,999,999,999,999,999,999\n BESTTTTTTT\n  TYLER1 POWER");
+	        miBest.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					// TODO Auto-generated method stub
+					player.subtractGold(999);
+					gold.setText("Gold: " + player.getGold());
+				}	            
+	        });
 	        btnBest.getItems().add(miBest);
 	        
 	  //bullet color picker     
@@ -368,7 +385,9 @@ public class ZombieRunner extends Application {
 	        });
 	   Button colorBuy = new Button("BUY");
 	   colorBuy.setOnAction((ActionEvent t) -> {
-	         c.setFill(colorPicker.getValue());	         
+	         c.setFill(colorPicker.getValue());	
+	         player.subtractGold(500);
+			 gold.setText("Gold: " + player.getGold());
 	        });
 	   
 
