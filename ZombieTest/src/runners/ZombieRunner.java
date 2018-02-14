@@ -85,7 +85,7 @@ public class ZombieRunner extends Application {
     	PrintWriter pw=new PrintWriter(new File("highscore.csv"));*/
         launch(args);
     }
-    
+    //
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
     	
@@ -137,14 +137,24 @@ public class ZombieRunner extends Application {
     	
     	
     	Button btnpause = new Button("Pause");
-        btnpause.setOnAction(e->
+        btnpause.setOnMouseClicked( clicked ->
         {
-        	//stop the game 
+        	//timer.stop(); 
         });
         btnpause.setFont(Font.loadFont("file:WarWound.otf",30));
         btnpause.setStyle("-fx-padding:5;");
         btnpause.setTranslateX(530);
         btnpause.setTranslateY(100);
+        
+        Button btnresume = new Button("Resume");
+        btnpause.setOnAction(e->
+        {
+        	//timer.start(); 
+        });
+        btnresume.setFont(Font.loadFont("file:WarWound.otf",30));
+        btnresume.setStyle("-fx-padding:5;");
+        btnresume.setTranslateX(530);
+        btnresume.setTranslateY(300);
         
         Button btngameshop = new Button("SHOP");
     	btngameshop.setOnAction(e->primaryStage.setScene(SceneShop));
@@ -159,7 +169,7 @@ public class ZombieRunner extends Application {
         
         Circle c1 = new Circle(250,250,20);
     	c1.setFill(Color.WHITE);
-    	game.getChildren().addAll(rect,c1,btnpause,btngameshop,line);
+    	game.getChildren().addAll(rect,c1,btnpause,btngameshop,line,btnresume);
     	
     	SceneGame = new Scene(game,650,500);
     	
@@ -277,7 +287,7 @@ public class ZombieRunner extends Application {
         };
         timer.start();
         
-    	//****************SCENE_SHOP*****************************
+    	//****************SCENE_SHOP*****************************//
     	StackPane sshop = new StackPane();
 	    Image auto = new Image("Auto.png");
 			ImageView iAuto = new ImageView();
