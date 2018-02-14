@@ -34,5 +34,6 @@ public abstract class Weapons {
 			return true;
 		}
 	}
+	public abstract int getPrice();
 	
 }
