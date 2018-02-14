@@ -57,7 +57,7 @@ import javafx.stage.Stage;
 import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
 import javafx.geometry.Pos;
- //Yiren,Derek,leon,hoilam
+ //Yiren,Derek,leon,hoiLam
 public class ZombieRunner extends Application {
 	
 	Scene SceneMenu, SceneShop, SceneGame, SceneSave, SceneLoad;
