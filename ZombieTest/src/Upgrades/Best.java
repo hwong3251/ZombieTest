@@ -2,13 +2,13 @@ package Upgrades;
 
 import Characters.Bullet;
 
-public class Auto extends Weapons{
+public class Best extends Weapons{
 	
-	private int dmg = 200;
-	private int price = 100;
+	private int dmg = 1000;
+	private int price = 999;
 	private boolean equipped = false;
 	
-	public Auto(int dmg, int price, boolean equipped, Bullet bul) {
+	public Best(int dmg, int price, boolean equipped, Bullet bul) {
 		super(dmg, price, equipped, bul);
 		// TODO Auto-generated constructor stub
 	}
@@ -36,5 +36,4 @@ public class Auto extends Weapons{
 			this.equipped=false;
 		}
 	}
-	
 }
