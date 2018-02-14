@@ -60,7 +60,7 @@ import javafx.geometry.Pos;
  //Yiren,Derek,leon,hoiLam
 public class ZombieRunner extends Application {
 	
-	Scene SceneMenu, SceneShop, SceneGame, SceneSave, SceneLoad;
+	Scene SceneMenu, SceneShop, SceneGame, SceneSave, SceneLoad,SceneGameOver;
 	private double previousangle;
 	private boolean playing=false;
 	private static final double W = 500, H = 500;
@@ -213,7 +213,26 @@ public class ZombieRunner extends Application {
     	
     	// ****************SCENE LOAD*****************************
     	
-    	    
+    	// ****************SCENE GAMEOVER*****************************
+    	StackPane gg = new StackPane();
+    	
+    	VBox vboxg = new VBox();
+        
+        Text title = new Text("GAME OVER");
+        title.setFont(Font.font("Comic Sans",FontWeight.BOLD,75));
+        title.setTranslateX(0);
+        title.setTranslateY(-25);
+        vboxg.getChildren().add(title);
+        
+        Button restartn = new Button("MENU");
+        restartn.setTranslateX(0);
+        restartn.setTranslateY(50);
+        restartn.setOnAction(e->primaryStage.setScene(SceneMenu));
+	    
+        gg.getChildren().addAll(title,restartn);
+        
+        SceneGameOver  = new Scene(gg,500,500);
+        
     	//PRIMARY STAGE
         // THE BULLET ANIMATION
         primaryStage.setScene(SceneShop);
