@@ -84,7 +84,7 @@ public class ZombieRunner extends Application {
     	PrintWriter pw=new PrintWriter(new File("highscore.csv"));*/
         launch(args);
     }
-    
+    //
     @Override
     public void start(Stage primaryStage) throws FileNotFoundException {
     	
@@ -286,7 +286,7 @@ public class ZombieRunner extends Application {
         };
         timer.start();
         
-    	//****************SCENE_SHOP*****************************
+    	//****************SCENE_SHOP*****************************//
     	StackPane sshop = new StackPane();
 	    Image auto = new Image("Auto.png");
 			ImageView iAuto = new ImageView();
