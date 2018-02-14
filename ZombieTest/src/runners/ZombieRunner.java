@@ -316,15 +316,10 @@ public class ZombieRunner extends Application {
         
         VBox vbox1 = new VBox(10);
         vbox1.setAlignment(Pos.CENTER_LEFT);
-        vbox1.setStyle("-fx-border-style: dotted;"
-                + "-fx-border-width: 1;"
-                + "-fx-border-color: black");
         
         VBox vbox2 = new VBox(20);
         vbox2.setAlignment(Pos.CENTER_LEFT);
-        vbox2.setStyle("-fx-border-style: dotted;"
-                + "-fx-border-width: 1;"
-                + "-fx-border-color: black");
+
     
         
         Button btnmenu = new Button("MENU");
