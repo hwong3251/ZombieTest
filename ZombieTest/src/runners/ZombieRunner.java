@@ -51,6 +51,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
@@ -344,9 +345,9 @@ public class ZombieRunner extends Application {
 	    btnmenu.setTranslateY(200);
 	    btnmenu.setOnAction(u->primaryStage.setScene(SceneMenu));
 
-        Label title = new Label("Weapons Shop");
-        	title.setTranslateY(-200);
-        	title.setFont(Font.loadFont("file:WarWound.otf",30));
+        Label title1 = new Label("Weapons Shop");
+        	title1.setTranslateY(-200);
+        	title1.setFont(Font.loadFont("file:WarWound.otf",30));
         Label gold = new Label("Gold: " + player.getGold());
         	gold.setTranslateY(-100);
         	gold.setTranslateX(150);
@@ -404,7 +405,7 @@ public class ZombieRunner extends Application {
         	vbox2.setTranslateX(-80);
         
         hbox.getChildren().addAll(vbox1, vbox2);
-        sshop.getChildren().addAll(title,gold,hbox,btnmenu);
+        sshop.getChildren().addAll(title1,gold,hbox,btnmenu);
         SceneShop = new Scene(sshop,500,500);
         SceneShop.getStylesheets().add("SceneShop.css");
     	//****************SCENE SHOP*****************************
