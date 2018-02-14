@@ -16,8 +16,14 @@
 }
 
 .button:pressed {
-    -fx-background-color: lightgreen;
+    -fx-background-color: #b7b5a7;
     -fx-text-fill: white;
+}
+
+.vbox{
+	-fx-border-style: dotted;
+    -fx-border-width: 1;
+    -fx-border-color: black;
 }
 
 .menu-button{
@@ -38,7 +44,7 @@
 }
 
 .menu-button:pressed {
-    -fx-background-color: lightgreen;
+    -fx-background-color:  #b7b5a7;
     -fx-text-fill: white;
 }
 

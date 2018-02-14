@@ -16,23 +16,7 @@ public abstract class Weapons {
 		this.bul = bul;
 	}
 	
-	public void setPrice(int price)
-	{
-		this.price = price;
-	}
-	public void setDamage(int dmg)
-	{
-		this.dmg = dmg;
-	}
-	public boolean changeEquipped()
-	{
-		if(this.equipped = true)
-		{
-			return false;
-		}
-		else {
-			return true;
-		}
-	}
+	public abstract void setDamage(int dmg);
+	public abstract int getPrice();
 	
 }

@@ -48,4 +48,12 @@ public class Player extends Character{
 	{
 		return this.gold;
 	}
+	public void addGold(int g)
+	{
+		this.gold += g;
+	}
+	public void subtractGold(int g)
+	{
+		this.gold -= g;
+	}
 }
