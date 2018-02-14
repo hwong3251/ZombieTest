@@ -289,23 +289,10 @@ public class ZombieRunner extends Application {
         
     	//****************SCENE_SHOP*****************************//
     	StackPane sshop = new StackPane();
+    	
 	    Image auto = new Image("Auto.png");
 			ImageView iAuto = new ImageView();
 			iAuto.setImage(auto);
-/*
-		Image boomerang = new Image("Boomerang.png");
-	    	ImageView iBoomerang = new ImageView();
-	        iBoomerang.setImage(boomerang);
-		Image click = new Image("Click.png");
-	    	ImageView iClick = new ImageView();
-	        iClick.setImage(click);
-		Image poison = new Image("Poison.png");
-	    	ImageView iPoison = new ImageView();
-	        iPoison.setImage(poison);
-		Image spear = new Image("Spear.png");
-	    	ImageView  iSpear = new ImageView();
-	        iSpear.setImage(spear);
-*/
 		Image best = new Image("Best.png");
 	    	ImageView iBest = new ImageView();
 	        iBest.setImage(best);
@@ -357,20 +344,7 @@ public class ZombieRunner extends Application {
 				}	            
 	        });
 	        btnAuto.getItems().add(miA);
-/*
-        MenuButton btnClick = new MenuButton("",iClick);
-	        MenuItem miC = new MenuItem("Click Here to BUY\nGold: 0\n CLICK\n  des");
-	        btnClick.getItems().add(miC);
-        MenuButton btnBoomerang = new MenuButton("",iBoomerang);
-	        MenuItem miB = new MenuItem("Click Here to BUY\nGold: 0\n BOOMERANG\n  des");
-	        btnBoomerang.getItems().add(miB);
-        MenuButton btnPoison = new MenuButton("",iPoison);
-	        MenuItem miP = new MenuItem("Click Here to BUY\nGold: 0\n POISON\n  des");
-	        btnPoison.getItems().add(miP);
-        MenuButton btnSpear = new MenuButton("",iSpear);
-	        MenuItem miS = new MenuItem("Click Here to BUY\nGold: 0\n SPEAR\n  des");
-	        btnSpear.getItems().add(miS);
-*/    
+    
         MenuButton btnBest = new MenuButton("",iBest);
 	        MenuItem miBest = new MenuItem("Click Here to BUY\nGold: 999,999,999,999,999,999,999\n BESTTTTTTT\n  TYLER1 POWER");
 	        miBest.setOnAction(new EventHandler<ActionEvent>() {
