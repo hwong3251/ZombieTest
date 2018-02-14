@@ -255,20 +255,16 @@ public class ZombieRunner extends Application {
     
         
         Button btnmenu = new Button("MENU");
-	        btnmenu.setTranslateX(150);
-	        btnmenu.setTranslateY(200);
-	        btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-<<<<<<< HEAD
+	    btnmenu.setTranslateX(150);
+	    btnmenu.setTranslateY(200);
+	    btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
         btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
         btnmenu.setTranslateY(-190);
         btnmenu.setTranslateX(-300);	
         btnmenu.setMinWidth(50);	
         btnmenu.setFont(Font.loadFont("file:WarWound.otf",30));
         btnmenu.setStyle("-fx-padding:5;");
-        // branch 'f' of https://github.com/hwong3251/ZombieTest.git
-=======
->>>>>>> branch 'f' of https://github.com/hwong3251/ZombieTest.git
-        
+
         Label title = new Label("Weapons Shop");
         	title.setTranslateY(-200);
         	title.setFont(Font.loadFont("file:WarWound.otf",30));
@@ -346,26 +342,21 @@ public class ZombieRunner extends Application {
     	final KeyValue ba = new KeyValue(zombie3.yProperty(),400);
     	final KeyFrame bb = new KeyFrame(Duration.millis(1000), ba);*/
     	
-    	game.getChildren().add(player1);
+    	//game.getChildren().add(player1);
     	/*game.getChildren().add(zombie);
     	game.getChildren().add(zombie2);
     	game.getChildren().add(zombie3);*/
     	
     	/*timeline.getKeyFrames().add(cx);
     	timeline.getKeyFrames().add(da);
-<<<<<<< HEAD
     	timeline.getKeyFrames().add(bb);*/
     	
     	//timeline.play();
     	//primaryStage.setScene(SceneMenu);
     	//primaryStage.show();
-=======
-    	timeline.getKeyFrames().add(bb);
-    	timeline.play();
-      //  primaryStage.setScene(SceneMenu);
-       // primaryStage.show();
->>>>>>> branch 'f' of https://github.com/hwong3251/ZombieTest.git
-    	
+    	//timeline.getKeyFrames().add(bb);
+    	//primaryStage.setScene(SceneMenu);
+        //primaryStage.show();
         primaryStage.setScene(SceneMenu);
         primaryStage.show();
         AnimationTimer timer = new AnimationTimer() 
