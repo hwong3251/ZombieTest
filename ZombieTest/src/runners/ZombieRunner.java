@@ -30,6 +30,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Control;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -201,103 +202,6 @@ public class ZombieRunner extends Application {
     	
     	// ****************SCENE LOAD*****************************
     	
-    	//****************SCENE_SHOP*****************************
-    	StackPane sshop = new StackPane();
-	    Image auto = new Image("Auto.png");
-			ImageView iAuto = new ImageView();
-			iAuto.setImage(auto);
-		Image boomerang = new Image("Boomerang.png");
-	    	ImageView iBoomerang = new ImageView();
-	        iBoomerang.setImage(boomerang);
-		Image click = new Image("Click.png");
-	    	ImageView iClick = new ImageView();
-	        iClick.setImage(click);
-		Image poison = new Image("Poison.png");
-	    	ImageView iPoison = new ImageView();
-	        iPoison.setImage(poison);
-		Image spear = new Image("Spear.png");
-	    	ImageView  iSpear = new ImageView();
-	        iSpear.setImage(spear);
-		Image best = new Image("Best.png");
-	    	ImageView iBest = new ImageView();
-	        iBest.setImage(best);
-        
-        ImageView[] weaponimage = new ImageView[6];
-        weaponimage[0] = iAuto;
-        weaponimage[1] = iBoomerang;
-        weaponimage[2] = iClick;
-        weaponimage[3] = iPoison;
-        weaponimage[4] = iSpear;
-        weaponimage[5] = iBest;
-        
-        for(int i = 0; i < weaponimage.length; i++)
-        {
-        	weaponimage[i].setFitHeight(80);
-        	weaponimage[i].setPreserveRatio(true);
-            weaponimage[i].setSmooth(true);
-            weaponimage[i].setCache(true);
-        }
-        
-    	HBox hbox = new HBox(10);
-        hbox.setAlignment(Pos.CENTER); // default TOP_LEFT
-        
-        VBox vbox1 = new VBox(10);
-        vbox1.setAlignment(Pos.CENTER_LEFT);
-        vbox1.setStyle("-fx-border-style: dotted;"
-                + "-fx-border-width: 1;"
-                + "-fx-border-color: black");
-        
-        VBox vbox2 = new VBox(20);
-        vbox2.setAlignment(Pos.CENTER_LEFT);
-        vbox2.setStyle("-fx-border-style: dotted;"
-                + "-fx-border-width: 1;"
-                + "-fx-border-color: black");
-    
-        
-        Button btnmenu = new Button("MENU");
-	    btnmenu.setTranslateX(150);
-	    btnmenu.setTranslateY(200);
-	    btnmenu.setOnAction(e->primaryStage.setScene(SceneMenu));
-
-        Label title = new Label("Weapons Shop");
-        	title.setTranslateY(-200);
-        	title.setFont(Font.loadFont("file:WarWound.otf",30));
-        Label gold = new Label("Gold: " + player.getGold());
-        	gold.setTranslateY(-100);
-        	gold.setTranslateX(150);
-        	gold.setFont(Font.loadFont("file:WarWound.otf",30));
-        
-        MenuButton btnAuto = new MenuButton("",iAuto);      	
-	        MenuItem miA = new MenuItem("Click Here to BUY\nGold: 0\n AUTO\n  Shoots out multiple bullets");
-	        btnAuto.getItems().add(miA);
-        MenuButton btnClick = new MenuButton("",iClick);
-	        MenuItem miC = new MenuItem("Click Here to BUY\nGold: 0\n CLICK\n  des");
-	        btnClick.getItems().add(miC);
-        MenuButton btnBoomerang = new MenuButton("",iBoomerang);
-	        MenuItem miB = new MenuItem("Click Here to BUY\nGold: 0\n BOOMERANG\n  des");
-	        btnBoomerang.getItems().add(miB);
-        MenuButton btnPoison = new MenuButton("",iPoison);
-	        MenuItem miP = new MenuItem("Click Here to BUY\nGold: 0\n POISON\n  des");
-	        btnPoison.getItems().add(miP);
-        MenuButton btnSpear = new MenuButton("",iSpear);
-	        MenuItem miS = new MenuItem("Click Here to BUY\nGold: 0\n SPEAR\n  des");
-	        btnSpear.getItems().add(miS);
-        MenuButton btnBest = new MenuButton("",iBest);
-	        MenuItem miBest = new MenuItem("Click Here to BUY\nGold: 999,999,999,999,999,999,999\n BESTTTTTTT\n  TYLER1 POWER");
-	        btnBest.getItems().add(miBest);
-     
-        vbox1.getChildren().addAll(btnAuto, btnClick, btnSpear);
-        	vbox1.setMaxSize(35, 300);
-        	vbox1.setTranslateX(-80);
-        vbox2.getChildren().addAll(btnPoison, btnBoomerang, btnBest);	
-        	vbox2.setMaxSize(35, 300);
-        	vbox2.setTranslateX(-80);
-        
-        hbox.getChildren().addAll(vbox1, vbox2);
-        sshop.getChildren().addAll(title,gold,hbox,btnmenu);
-        SceneShop = new Scene(sshop,500,500);
-        SceneShop.getStylesheets().add("SceneShop.css");
-    	//****************SCENE SHOP*****************************
     	    
     	//PRIMARY STAGE
         // THE BULLET ANIMATION
@@ -371,6 +275,122 @@ public class ZombieRunner extends Application {
             }
         };
         timer.start();
+        
+    	//****************SCENE_SHOP*****************************
+    	StackPane sshop = new StackPane();
+	    Image auto = new Image("Auto.png");
+			ImageView iAuto = new ImageView();
+			iAuto.setImage(auto);
+/*
+		Image boomerang = new Image("Boomerang.png");
+	    	ImageView iBoomerang = new ImageView();
+	        iBoomerang.setImage(boomerang);
+		Image click = new Image("Click.png");
+	    	ImageView iClick = new ImageView();
+	        iClick.setImage(click);
+		Image poison = new Image("Poison.png");
+	    	ImageView iPoison = new ImageView();
+	        iPoison.setImage(poison);
+		Image spear = new Image("Spear.png");
+	    	ImageView  iSpear = new ImageView();
+	        iSpear.setImage(spear);
+*/
+		Image best = new Image("Best.png");
+	    	ImageView iBest = new ImageView();
+	        iBest.setImage(best);
+        
+        ImageView[] weaponimage = new ImageView[2];
+        weaponimage[0] = iAuto;
+        weaponimage[1] = iBest;
+        
+        for(int i = 0; i < weaponimage.length; i++)
+        {
+        	weaponimage[i].setFitHeight(80);
+        	weaponimage[i].setPreserveRatio(true);
+            weaponimage[i].setSmooth(true);
+            weaponimage[i].setCache(true);
+        }
+        
+    	HBox hbox = new HBox(10);
+        hbox.setAlignment(Pos.CENTER); // default TOP_LEFT
+        
+        VBox vbox1 = new VBox(10);
+        vbox1.setAlignment(Pos.CENTER_LEFT);
+        vbox1.setStyle("-fx-border-style: dotted;"
+                + "-fx-border-width: 1;"
+                + "-fx-border-color: black");
+        
+        VBox vbox2 = new VBox(20);
+        vbox2.setAlignment(Pos.CENTER_LEFT);
+        vbox2.setStyle("-fx-border-style: dotted;"
+                + "-fx-border-width: 1;"
+                + "-fx-border-color: black");
+    
+        
+        Button btnmenu = new Button("MENU");
+	    btnmenu.setTranslateX(150);
+	    btnmenu.setTranslateY(200);
+	    btnmenu.setOnAction(u->primaryStage.setScene(SceneMenu));
+
+        Label title = new Label("Weapons Shop");
+        	title.setTranslateY(-200);
+        	title.setFont(Font.loadFont("file:WarWound.otf",30));
+        Label gold = new Label("Gold: " + player.getGold());
+        	gold.setTranslateY(-100);
+        	gold.setTranslateX(150);
+        	gold.setFont(Font.loadFont("file:WarWound.otf",30));
+        
+        MenuButton btnAuto = new MenuButton("",iAuto);      	
+	        MenuItem miA = new MenuItem("Click Here to BUY\nGold: 0\n AUTO\n  Shoots out multiple bullets");
+	        btnAuto.getItems().add(miA);
+/*
+        MenuButton btnClick = new MenuButton("",iClick);
+	        MenuItem miC = new MenuItem("Click Here to BUY\nGold: 0\n CLICK\n  des");
+	        btnClick.getItems().add(miC);
+        MenuButton btnBoomerang = new MenuButton("",iBoomerang);
+	        MenuItem miB = new MenuItem("Click Here to BUY\nGold: 0\n BOOMERANG\n  des");
+	        btnBoomerang.getItems().add(miB);
+        MenuButton btnPoison = new MenuButton("",iPoison);
+	        MenuItem miP = new MenuItem("Click Here to BUY\nGold: 0\n POISON\n  des");
+	        btnPoison.getItems().add(miP);
+        MenuButton btnSpear = new MenuButton("",iSpear);
+	        MenuItem miS = new MenuItem("Click Here to BUY\nGold: 0\n SPEAR\n  des");
+	        btnSpear.getItems().add(miS);
+*/    
+        MenuButton btnBest = new MenuButton("",iBest);
+	        MenuItem miBest = new MenuItem("Click Here to BUY\nGold: 999,999,999,999,999,999,999\n BESTTTTTTT\n  TYLER1 POWER");
+	        btnBest.getItems().add(miBest);
+	        
+	  //bullet color picker     
+	   Circle c2 = new Circle();
+	   		c2.setRadius(25);
+	    	c2.setFill(Color.BLUE);	    
+	   final ColorPicker colorPicker = new ColorPicker();
+	       colorPicker.setValue(Color.RED);
+	   final Text text = new Text("Color picker for Bullet\n  Gold: 500");
+	   colorPicker.setOnAction((ActionEvent t) -> {
+	         c2.setFill(colorPicker.getValue());
+	        });
+	   Button colorBuy = new Button("BUY");
+	   colorBuy.setOnAction((ActionEvent t) -> {
+	         c.setFill(colorPicker.getValue());	         
+	        });
+	   
+
+	    	
+     
+        vbox1.getChildren().addAll(text,c2,colorPicker,colorBuy);
+        	vbox1.setMaxSize(35, 300);
+        	vbox1.setTranslateX(-80);
+        vbox2.getChildren().addAll(btnAuto,btnBest);	
+        	vbox2.setMaxSize(35, 300);
+        	vbox2.setTranslateX(-80);
+        
+        hbox.getChildren().addAll(vbox1, vbox2);
+        sshop.getChildren().addAll(title,gold,hbox,btnmenu);
+        SceneShop = new Scene(sshop,500,500);
+        SceneShop.getStylesheets().add("SceneShop.css");
+    	//****************SCENE SHOP*****************************
     }  
     private double computeAngle( final Point2D a )
     {
