@@ -294,6 +294,8 @@ public class ZombieRunner extends Application {
         		{
         			if(c.getCenterX()==250&&c.getCenterY()==250)
         			{
+        				if(clicked.getX()<=500)
+        	        	{
 	        			final KeyValue ab = new KeyValue(c.centerYProperty(),clicked.getY());
 	        	    	final KeyValue ax = new KeyValue(c.centerXProperty(),clicked.getX());
 	        	    	final KeyFrame ac = new KeyFrame(Duration.millis(100), ab,ax);
@@ -302,6 +304,7 @@ public class ZombieRunner extends Application {
 	        	    	timeline.setAutoReverse(true);
 	        	    	timeline.getKeyFrames().add(ac);
 	        			timeline.play();
+        	        	}
         			}
         		});
             	if(now%100l==0l)
