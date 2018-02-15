@@ -307,16 +307,30 @@ public class ZombieRunner extends Application {
             	if(now%100l==0l)
             	{
             		double intx=(Math.random()*450);
-            		
+            		double inty=(Math.random()*450);
             		Rectangle zombie = new Rectangle(intx, 0, 50, 50);
             		zombie.setFill(Color.GREEN);
             		KeyValue cy = new KeyValue(zombie.yProperty(), 225);
             		KeyValue cx = new KeyValue(zombie.xProperty(), 225);
                 	KeyFrame cz = new KeyFrame(Duration.millis(10000), cy, cx);
                 	final Timeline timeline1 = new Timeline();
-                	game.getChildren().add(zombie);
+                	
+                	double intx1=(Math.random()*450);
+            		double inty2=(Math.random()*450);
+                	Rectangle zombie1 = new Rectangle(intx1,450, 50, 50);
+            		zombie1.setFill(Color.GREEN);
+            		KeyValue z1y = new KeyValue(zombie1.yProperty(), 225);
+            		KeyValue z1x = new KeyValue(zombie1.xProperty(), 225);
+                	KeyFrame z1 = new KeyFrame(Duration.millis(10000), z1y, z1x);
+                	final Timeline timeline2 = new Timeline();
+                	
+                	
+                	game.getChildren().addAll(zombie,zombie1);
+                	timeline2.getKeyFrames().add(z1);
+                	timeline2.play();
                 	timeline1.getKeyFrames().add(cz);
                 	timeline1.play();
+                	
             	}
             }
         };
