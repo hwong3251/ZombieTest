@@ -170,7 +170,7 @@ public class ZombieRunner extends Application {
         
         Circle c1 = new Circle(250,250,20);
     	c1.setFill(Color.WHITE);
-    	game.getChildren().addAll(rect,c1,btnpause,btngameshop,line,btnresume);
+    	
     	
     	SceneGame = new Scene(game,650,500);
     	
@@ -210,6 +210,7 @@ public class ZombieRunner extends Application {
     		}
     	});
     	
+    	
     	// ****************SCENE SAVE*****************************
     	
     	// ****************SCENE LOAD*****************************
@@ -245,7 +246,6 @@ public class ZombieRunner extends Application {
     	c.setCenterX(250.0f); 
         c.setCenterY(250.0f); 
         c.setRadius(10.0f);
-        game.getChildren().add(c);
     	double y = 0;
     	double x = randomWithRange(0, 500);
     	double a = 0;
@@ -254,29 +254,27 @@ public class ZombieRunner extends Application {
     	double e = randomWithRange(0, 500);
     	final Rectangle player1 = new Rectangle(400, 300, 50, 50);
     	// zombies
-    	/*final Rectangle zombie = new Rectangle(x, y, 50, 50);
+    	/*
     	final Rectangle zombie2 = new Rectangle(b, a, 50, 50);
     	final Rectangle zombie3 = new Rectangle(e, d, 50, 50);*/
     	c.setFill(Color.BLUE);
     	//player1.setFill(Color.BLACK);
-    	/*zombie.setFill(Color.GREEN);
+    	/*
     	zombie2.setFill(Color.GREEN);
     	zombie3.setFill(Color.GREEN);*/
-    	System.out.println(c.centerYProperty());
     	
-    	/*final KeyValue cz = new KeyValue(zombie.yProperty(), 500);
-    	final KeyFrame cx = new KeyFrame(Duration.millis(1000), cz);
+    	/*final 
     	final KeyValue dc = new KeyValue(zombie2.yProperty(),400);
     	final KeyFrame da = new KeyFrame(Duration.millis(1000), dc);
     	final KeyValue ba = new KeyValue(zombie3.yProperty(),400);
     	final KeyFrame bb = new KeyFrame(Duration.millis(1000), ba);*/
     	
     	//game.getChildren().add(player1);
-    	/*game.getChildren().add(zombie);
+    	/*
     	game.getChildren().add(zombie2);
     	game.getChildren().add(zombie3);*/
     	
-    	/*timeline.getKeyFrames().add(cx);
+    	/*
     	timeline.getKeyFrames().add(da);
     	timeline.getKeyFrames().add(bb);*/
     	
@@ -294,18 +292,37 @@ public class ZombieRunner extends Application {
             {
             	game.setOnMouseClicked( clicked ->
         		{
-        			final KeyValue ab = new KeyValue(c.centerYProperty(),clicked.getY());
-        	    	final KeyValue ax = new KeyValue(c.centerXProperty(),clicked.getX());
-        	    	final KeyFrame ac = new KeyFrame(Duration.millis(100), ab,ax);
-        	    	final Timeline timeline = new Timeline();
-        	    	timeline.setCycleCount(2);
-        	    	timeline.setAutoReverse(true);
-        	    	timeline.getKeyFrames().add(ac);
-        			timeline.play();
+        			if(c.getCenterX()==250&&c.getCenterY()==250)
+        			{
+	        			final KeyValue ab = new KeyValue(c.centerYProperty(),clicked.getY());
+	        	    	final KeyValue ax = new KeyValue(c.centerXProperty(),clicked.getX());
+	        	    	final KeyFrame ac = new KeyFrame(Duration.millis(100), ab,ax);
+	        	    	final Timeline timeline = new Timeline();
+	        	    	timeline.setCycleCount(2);
+	        	    	timeline.setAutoReverse(true);
+	        	    	timeline.getKeyFrames().add(ac);
+	        			timeline.play();
+        			}
         		});
+            	if(now%100l==0l)
+            	{
+            		double intx=(Math.random()*450);
+            		
+            		Rectangle zombie = new Rectangle(intx, 0, 50, 50);
+            		zombie.setFill(Color.GREEN);
+            		KeyValue cy = new KeyValue(zombie.yProperty(), 225);
+            		KeyValue cx = new KeyValue(zombie.xProperty(), 225);
+                	KeyFrame cz = new KeyFrame(Duration.millis(10000), cy, cx);
+                	final Timeline timeline1 = new Timeline();
+                	game.getChildren().add(zombie);
+                	timeline1.getKeyFrames().add(cz);
+                	timeline1.play();
+            	}
             }
         };
         timer.start();
+        
+        game.getChildren().addAll(rect,c,c1,btnpause,btngameshop,line,btnresume);
         
     	//****************SCENE_SHOP*****************************//
     	StackPane sshop = new StackPane();
